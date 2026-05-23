@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CONAGEN 2026 | 4ta Reunión del Comité Nacional de Genética</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#f4f7fb;
+    color:#1e293b;
+    overflow-x:hidden;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(8,20,43,.82),rgba(8,20,43,.88)),
+    url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=1974&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:60px 30px;
+    position:relative;
+}
+
+.hero::after{
+    content:'';
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:120px;
+    background:linear-gradient(to top,#f4f7fb,transparent);
+}
+
+.hero-container{
+    width:100%;
+    max-width:1450px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+    z-index:2;
+}
+
+.logo img{
+    width:320px;
+    max-width:100%;
+    margin-bottom:30px;
+}
+
+.hero h1{
+    font-size:5rem;
+    color:white;
+    font-weight:800;
+    line-height:1;
+}
+
+.hero h2{
+    font-size:2.4rem;
+    color:#9cc5ff;
+    font-weight:300;
+    margin-top:15px;
+    margin-bottom:25px;
+}
+
+.hero p{
+    color:#dbeafe;
+    line-height:1.9;
+    font-size:1.1rem;
+    max-width:700px;
+}
+
+.hero-badges{
+    display:flex;
+    gap:20px;
+    margin-top:40px;
+    flex-wrap:wrap;
+}
+
+.badge{
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.15);
+    backdrop-filter:blur(10px);
+    padding:18px 24px;
+    border-radius:20px;
+    min-width:220px;
+}
+
+.badge h4{
+    color:#93c5fd;
+    font-size:.9rem;
+    margin-bottom:8px;
+    letter-spacing:1px;
+}
+
+.badge p{
+    color:white;
+    font-size:1rem;
+}
+
+.hero-image{
+    display:flex;
+    justify-content:center;
+}
+
+.hero-image img{
+    width:100%;
+    max-width:620px;
+    animation:float 5s ease-in-out infinite;
+    filter:drop-shadow(0 20px 40px rgba(0,0,0,.45));
+}
+
+@keyframes float{
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-15px);}
+    100%{transform:translateY(0px);}
+}
+
+/* SECTION */
+
+.section{
+    width:92%;
+    max-width:1500px;
+    margin:auto;
+    padding:90px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:3rem;
+    color:#0f172a;
+    margin-bottom:15px;
+}
+
+.section-title p{
+    color:#64748b;
+    font-size:1.1rem;
+}
+
+/* ARRIVAL */
+
+.arrival{
+    background:white;
+    border-radius:28px;
+    padding:35px;
+    margin-bottom:50px;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.arrival h3{
+    color:#123d7a;
+    margin-bottom:25px;
+    font-size:2rem;
+}
+
+/* PROGRAM */
+
+.program-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.day-card{
+    background:white;
+    border-radius:28px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.day-card:hover{
+    transform:translateY(-6px);
+}
+
+.day-header{
+    background:linear-gradient(135deg,#123d7a,#2563eb);
+    color:white;
+    padding:28px;
+}
+
+.day-header h3{
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+.day-header p{
+    opacity:.9;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#eaf2ff;
+    color:#123d7a;
+    padding:18px;
+    text-align:left;
+    font-size:.9rem;
+}
+
+td{
+    padding:18px;
+    border-bottom:1px solid #edf2f7;
+    vertical-align:top;
+    font-size:.95rem;
+}
+
+tr:hover{
+    background:#f8fbff;
+}
+
+.time{
+    font-weight:700;
+    color:#123d7a;
+    width:140px;
+}
+
+.break{
+    background:#edf4ff;
+    font-weight:700;
+    color:#123d7a;
+}
+
+/* FOOTER */
+
+footer{
+    background:#08142b;
+    color:white;
+    padding:80px 30px 40px;
+    margin-top:80px;
+}
+
+.footer-container{
+    max-width:1400px;
+    margin:auto;
+    text-align:center;
+}
+
+.footer-logo img{
+    width:240px;
+    margin-bottom:30px;
+}
+
+.footer-container h3{
+    font-size:2rem;
+    margin-bottom:15px;
+}
+
+.footer-container p{
+    color:#cbd5e1;
+    line-height:1.8;
+}
+
+.footer-bottom{
+    margin-top:50px;
+    border-top:1px solid rgba(255,255,255,.1);
+    padding-top:25px;
+    color:#94a3b8;
+    font-size:.9rem;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1100px){
+
+.hero-container{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+
+.hero-badges{
+    justify-content:center;
+}
+
+.program-grid{
+    grid-template-columns:1fr;
+}
+
+.hero h1{
+    font-size:3.5rem;
+}
+
+.hero h2{
+    font-size:2rem;
+}
+
+}
+
+@media(max-width:700px){
+
+.hero{
+    padding:80px 20px;
+}
+
+.hero h1{
+    font-size:2.6rem;
+}
+
+.hero h2{
+    font-size:1.4rem;
+}
+
+.section-title h2{
+    font-size:2rem;
+}
+
+td,th{
+    font-size:.85rem;
+    padding:12px;
+}
+
+.badge{
+    width:100%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-container">
+
+<div>
+
+<div class="logo">
+<img src="https://i.imgur.com/uFBnymx.png" alt="CONAGEN">
+</div>
+
+<h1>4ta Reunión</h1>
+
+<h2>Comité Nacional de Genética</h2>
+
+<p>
+Un espacio de colaboración científica orientado al fortalecimiento de la genética forense, 
+la homologación nacional de criterios técnicos y el intercambio de experiencias entre 
+laboratorios y especialistas en identificación humana.
+</p>
+
+<div class="hero-badges">
+
+<div class="badge">
+<h4>FECHA</h4>
+<p>25 al 27 de mayo 2026</p>
+</div>
+
+<div class="badge">
+<h4>SEDE</h4>
+<p>Chihuahua, Chihuahua, México</p>
+</div>
+
+<div class="badge">
+<h4>ORGANIZA</h4>
+<p>CONAGEN</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="https://i.imgur.com/2RQf6Zd.png" alt="CONAGEN 2026">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PROGRAM -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>Programa Oficial</h2>
+
+<p>
+4ta Reunión del Comité Nacional de Genética
+</p>
+
+</div>
+
+<!-- ARRIVAL -->
+
+<div class="arrival">
+
+<h3>Día de Llegada · 25 de mayo 2026</h3>
+
+<table>
+
+<tr>
+<th>Horario</th>
+<th>Actividad</th>
+<th>Lugar</th>
+</tr>
+
+<tr>
+<td class="time">19:00 hrs</td>
+<td>Cena de bienvenida</td>
+<td>Salón María Bonita</td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- DAYS -->
+
+<div class="program-grid">
+
+<!-- DIA 1 -->
+
+<div class="day-card">
+
+<div class="day-header">
+
+<h3>Día 1</h3>
+
+<p>26 de mayo 2026</p>
+
+</div>
+
+<table>
+
+<tr>
+<th>Horario</th>
+<th>Tema</th>
+<th>Ponente</th>
+</tr>
+
+<tr>
+<td class="time">09:30-09:45</td>
+<td>Registro / Lista de asistencia</td>
+<td>-</td>
+</tr>
+
+<tr>
+<td class="time">10:00-10:30</td>
+<td>Inauguración</td>
+<td>Autoridades</td>
+</tr>
+
+<tr>
+<td class="time">10:30-11:00</td>
+<td>Retos y experiencias en la acreditación de laboratorios</td>
+<td>Rosaura Ávila Ángeles · ICITAP México</td>
+</tr>
+
+<tr>
+<td class="time">11:00-11:30</td>
+<td>Optimización del flujo HID por CE e implementación NGS-HID</td>
+<td>Emmanuel Villanueva Chimal · LogitLab</td>
+</tr>
+
+<tr>
+<td class="time">11:30-12:00</td>
+<td>Experiencia en implementación de NGS</td>
+<td>Adrián Vilches Rodríguez · FGE Guanajuato</td>
+</tr>
+
+<tr class="break">
+<td colspan="3">RECESO · 12:00-12:20</td>
+</tr>
+
+<tr>
+<td class="time">12:20-12:35</td>
+<td>Informe de mesa directiva</td>
+<td>Mayra Moguel Torres</td>
+</tr>
+
+<tr>
+<td class="time">12:35-14:30</td>
+<td>Revisión y actualización de la Norma Técnica BaNIG</td>
+<td>Miguel Del Moral Stevenel · FGR</td>
+</tr>
+
+<tr class="break">
+<td colspan="3">COMIDA · 14:30-15:40</td>
+</tr>
+
+<tr>
+<td class="time">15:40-16:10</td>
+<td>Análisis e interpretación de ADN mitocondrial</td>
+<td>Claudia Judith Cervantes Ramos</td>
+</tr>
+
+<tr>
+<td class="time">16:10-16:40</td>
+<td>VEROGEN: secuenciación masiva</td>
+<td>Joshué Rosales · IVG</td>
+</tr>
+
+<tr class="break">
+<td colspan="3">RECESO · 16:40-17:00</td>
+</tr>
+
+<tr>
+<td class="time">17:00-17:30</td>
+<td>Banco Nacional de Datos Forenses</td>
+<td>Mavil López Casamichana · FGR</td>
+</tr>
+
+<tr>
+<td class="time">17:30-18:30</td>
+<td>Avances BaNIG y CODIS</td>
+<td>Miguel Del Moral Stevenel · FGR</td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- DIA 2 -->
+
+<div class="day-card">
+
+<div class="day-header">
+
+<h3>Día 2</h3>
+
+<p>27 de mayo 2026</p>
+
+</div>
+
+<table>
+
+<tr>
+<th>Horario</th>
+<th>Tema</th>
+<th>Ponente</th>
+</tr>
+
+<tr>
+<td class="time">10:00-10:20</td>
+<td>Identificación humana en México</td>
+<td>Yesenia G. Ramírez Sotelo</td>
+</tr>
+
+<tr>
+<td class="time">10:20-10:40</td>
+<td>Estrategias de Identificación Humana</td>
+<td>Javier Sánchez Herrera</td>
+</tr>
+
+<tr>
+<td class="time">10:40-11:00</td>
+<td>Químicas de 8 colores en sistemas Spectrum</td>
+<td>Nancy Jhanet Navarrete Celaya</td>
+</tr>
+
+<tr>
+<td class="time">11:00-11:40</td>
+<td>Criterios estadísticos para perfiles genéticos</td>
+<td>Guillermo Ortíz Martínez</td>
+</tr>
+
+<tr class="break">
+<td colspan="3">RECESO · 11:40-12:10</td>
+</tr>
+
+<tr>
+<td class="time">12:10-12:50</td>
+<td>Revisión de criterios HID nacional</td>
+<td>Laura Quiroz Compean</td>
+</tr>
+
+<tr>
+<td class="time">12:50-13:30</td>
+<td>Panel multidisciplinario HID</td>
+<td>Briselda López · Juliana Rizo · César Coronado</td>
+</tr>
+
+<tr>
+<td class="time">13:30-14:10</td>
+<td>Asuntos generales</td>
+<td>Mario Fajardo De León</td>
+</tr>
+
+<tr>
+<td class="time">14:10-14:50</td>
+<td>Comisión de estandarización</td>
+<td>Mayra Moguel Torres</td>
+</tr>
+
+<tr class="break">
+<td colspan="3">COMIDA · 14:50-16:10</td>
+</tr>
+
+<tr>
+<td class="time">16:10-16:30</td>
+<td>FORENSCOPE: automatización y rapidez</td>
+<td>Erencan Erez · Santos Orta</td>
+</tr>
+
+<tr>
+<td class="time">16:30-17:00</td>
+<td>Lectura de minuta</td>
+<td>Adrián Vilches Rodríguez</td>
+</tr>
+
+<tr>
+<td class="time">17:00-17:30</td>
+<td>Clausura</td>
+<td>Mayra Moguel Torres · Javier Sánchez Herrera</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-container">
+
+<div class="footer-logo">
+
+<img src="https://i.imgur.com/uFBnymx.png" alt="CONAGEN">
+
+</div>
+
+<h3>CONAGEN 2026</h3>
+
+<p>
+Comité Nacional de Genética · Chihuahua, México
+</p>
+
+<p>
+Ciencia · Colaboración · Identidad
+</p>
+
+<div class="footer-bottom">
+
+© 2026 CONAGEN · 4ta Reunión del Comité Nacional de Genética
+
+</div>
+
+</div>
+
+</footer>
+
+</body>
+</html>
